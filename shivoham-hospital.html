@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHIVOHAM Hospital and Trauma Center | Bhiwadi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15262B;
+    --ink-soft:#4A5C61;
+    --paper:#FAF8F4;
+    --paper-deep:#F1ECE3;
+    --ortho:#2D5D7B;
+    --ortho-tint:#E4ECF0;
+    --ortho-deep:#1F4258;
+    --gyno:#B5697A;
+    --gyno-tint:#F6E9EB;
+    --gyno-deep:#8F4B5A;
+    --gold:#B68D40;
+    --line:#DCD5C7;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-size:12.5px;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-weight:600;
+    color:var(--ink-soft);
+  }
+
+  /* ===== Header ===== */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,248,244,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;max-width:1080px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{
+    width:34px;height:34px;flex-shrink:0;
+  }
+  .brand-text{font-family:'Fraunces',serif;font-weight:700;font-size:16px;line-height:1.1;}
+  .brand-text span{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);}
+  nav.links{display:flex;gap:28px;font-size:14px;font-weight:500;}
+  nav.links a:hover{color:var(--ortho);}
+  .call-btn{
+    background:var(--ink);color:var(--paper);
+    padding:9px 18px;border-radius:var(--radius);
+    font-size:13.5px;font-weight:600;
+    display:flex;align-items:center;gap:7px;
+  }
+  @media (max-width:760px){ nav.links{display:none;} }
+
+  /* ===== Hero ===== */
+  .hero{
+    padding:64px 0 56px;
+    position:relative;
+    overflow:hidden;
+  }
+  .threads{
+    position:absolute;top:0;right:-60px;width:340px;height:100%;
+    opacity:0.5;pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center;
+    position:relative;z-index:2;
+  }
+  @media (max-width:820px){ .hero-grid{grid-template-columns:1fr;} }
+  .hero h1{font-size:clamp(34px,5vw,52px);line-height:1.06;margin-top:14px;}
+  .hero .accent{color:var(--ortho);}
+  .hero .accent2{color:var(--gyno-deep);}
+  .hero p.lede{margin-top:18px;font-size:16.5px;color:var(--ink-soft);max-width:480px;}
+  .rating-row{
+    display:flex;align-items:center;gap:10px;margin-top:22px;font-size:14px;
+  }
+  .stars{color:var(--gold);font-size:15px;letter-spacing:1px;}
+  .hero-ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 22px;border-radius:var(--radius);
+    font-size:14.5px;font-weight:600;border:1.5px solid transparent;cursor:pointer;
+  }
+  .btn-primary{background:var(--ink);color:var(--paper);}
+  .btn-primary:hover{background:var(--ortho-deep);}
+  .btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent;}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);}
+  .btn-wa{background:#1f8a52;color:#fff;}
+  .btn-wa:hover{background:#176b40;}
+
+  .hero-card{
+    background:#fff;border:1px solid var(--line);border-radius:6px;
+    padding:22px;position:relative;
+  }
+  .hero-card:before{
+    content:"";position:absolute;left:0;top:18px;bottom:18px;width:4px;
+    background:linear-gradient(180deg,var(--ortho),var(--gyno));
+  }
+  .hero-card .row{display:flex;justify-content:space-between;font-size:13.5px;padding:9px 0;border-bottom:1px dashed var(--line);}
+  .hero-card .row:last-child{border-bottom:none;}
+  .hero-card .row b{font-weight:600;}
+  .hero-card .label{color:var(--ink-soft);}
+
+  /* ===== Section shell ===== */
+  section{padding:64px 0;}
+  .section-head{margin-bottom:36px;max-width:640px;}
+  .section-head h2{font-size:clamp(26px,3.2vw,34px);margin-top:8px;}
+  .divider{
+    height:1px;background:var(--line);width:100%;
+  }
+
+  /* ===== Doctors ===== */
+  .doctors{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  @media (max-width:760px){.doctors{grid-template-columns:1fr;}}
+  .doc-card{
+    background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;
+  }
+  .doc-top{padding:26px 26px 0;}
+  .doc-tag{
+    display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+    padding:5px 10px;border-radius:20px;
+  }
+  .tag-ortho{background:var(--ortho-tint);color:var(--ortho-deep);}
+  .tag-gyno{background:var(--gyno-tint);color:var(--gyno-deep);}
+  .doc-card h3{font-size:21px;margin-top:14px;}
+  .doc-role{color:var(--ink-soft);font-size:14px;margin-top:3px;}
+  .doc-rating{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:13.5px;}
+  .doc-bar{height:5px;width:100%;}
+  .bar-ortho{background:var(--ortho);}
+  .bar-gyno{background:var(--gyno);}
+  .doc-services{padding:18px 26px 26px;}
+  .doc-services ul{margin:0;padding:0;list-style:none;}
+  .doc-services li{
+    font-size:14.5px;padding:8px 0;border-bottom:1px solid var(--paper-deep);
+    display:flex;gap:10px;
+  }
+  .doc-services li:last-child{border-bottom:none;}
+  .doc-services li:before{content:"";width:6px;height:6px;border-radius:50%;margin-top:7px;flex-shrink:0;}
+  .doc-card.ortho .doc-services li:before{background:var(--ortho);}
+  .doc-card.gyno .doc-services li:before{background:var(--gyno);}
+
+  /* ===== Timings ===== */
+  .timing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff;}
+  @media (max-width:760px){.timing-grid{grid-template-columns:1fr;}}
+  .timing-col{padding:26px;border-right:1px solid var(--line);}
+  .timing-col:last-child{border-right:none;}
+  @media (max-width:760px){.timing-col{border-right:none;border-bottom:1px solid var(--line);}}
+  .timing-col h4{font-size:13px;text-transform:uppercase;letter-spacing:0.07em;font-weight:700;color:var(--ink-soft);margin-bottom:14px;}
+  .timing-col .slot{display:flex;justify-content:space-between;font-size:14.5px;padding:7px 0;}
+  .timing-col .slot b{font-weight:600;}
+  .timing-col.emergency{background:var(--ink);color:var(--paper);}
+  .timing-col.emergency h4{color:#c9d4d6;}
+  .note{font-size:13px;color:var(--ink-soft);margin-top:14px;}
+
+  /* ===== Location & Contact ===== */
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  @media (max-width:820px){.loc-grid{grid-template-columns:1fr;}}
+  .loc-card p{margin:0 0 6px;font-size:15px;}
+  .loc-list{margin-top:18px;}
+  .loc-list .item{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--paper-deep);font-size:14.5px;}
+  .loc-list .item .ic{width:20px;flex-shrink:0;text-align:center;color:var(--ortho);font-weight:700;}
+  .map-frame{border:1px solid var(--line);border-radius:6px;overflow:hidden;height:300px;}
+  .map-frame iframe{width:100%;height:100%;border:0;}
+
+  /* ===== Appointment form ===== */
+  .appt-card{
+    background:#fff;border:1px solid var(--line);border-radius:6px;padding:32px;
+  }
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:600px){.form-row{grid-template-columns:1fr;}}
+  label{font-size:13px;font-weight:600;color:var(--ink-soft);display:block;margin-bottom:6px;}
+  input,select,textarea{
+    width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:4px;
+    font-family:'Inter',sans-serif;font-size:14.5px;background:var(--paper);color:var(--ink);
+    margin-bottom:16px;
+  }
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--ortho);outline-offset:1px;border-color:var(--ortho);}
+  textarea{resize:vertical;min-height:80px;}
+  .form-foot{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .form-msg{font-size:13.5px;color:var(--ink-soft);}
+
+  /* ===== Footer ===== */
+  footer{background:var(--ink);color:#D7DDDD;padding:44px 0 28px;}
+  .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;}
+  footer h4{color:#fff;font-family:'Fraunces',serif;font-size:18px;margin-bottom:6px;}
+  footer .sub{font-size:13px;color:#9FAEAE;}
+  footer .fline{font-size:13.5px;margin-top:14px;color:#C2CACA;}
+  .foot-bottom{border-top:1px solid #2A3A3E;margin-top:30px;padding-top:18px;font-size:12.5px;color:#7F8E8E;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+
+  /* WhatsApp floating button */
+  .wa-float{
+    position:fixed;bottom:22px;right:22px;z-index:80;
+    background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+  }
+  .wa-float svg{width:30px;height:30px;}
+
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="19" stroke="#2D5D7B" stroke-width="1.5"/>
+        <path d="M20 11 L20 29 M11 20 L29 20" stroke="#2D5D7B" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="20" cy="20" r="4" fill="#B5697A"/>
+      </svg>
+      <div class="brand-text">SHIVOHAM<span>Hospital &amp; Trauma Center</span></div>
+    </div>
+    <nav class="links">
+      <a href="#doctors">Doctors</a>
+      <a href="#services">Services</a>
+      <a href="#timings">Timings</a>
+      <a href="#location">Location</a>
+      <a href="#appointment">Appointment</a>
+    </nav>
+    <a class="call-btn" href="tel:+919116146200">📞 Call Now</a>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="threads" viewBox="0 0 340 600" fill="none">
+    <path d="M120 0 C 220 100, 60 200, 180 300 C 280 380, 80 480, 200 600" stroke="#2D5D7B" stroke-width="2" opacity="0.35"/>
+    <path d="M180 0 C 80 110, 260 210, 140 310 C 40 390, 240 490, 120 600" stroke="#B5697A" stroke-width="2" opacity="0.35"/>
+  </svg>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Bhiwadi, Rajasthan · Orthopedic &amp; Gynecology Care</p>
+      <h1>One hospital.<br><span class="accent">Bone care.</span> <span class="accent2">Women's care.</span></h1>
+      <p class="lede">SHIVOHAM Hospital and Trauma Center brings together trauma &amp; orthopedic treatment and gynecology &amp; maternity care under one roof, with a 24-hour emergency team always on call.</p>
+      <div class="rating-row">
+        <span class="stars">★★★★★</span>
+        <b>4.7</b> <span style="color:var(--ink-soft)">(98 Google reviews)</span>
+      </div>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#appointment">Request an Appointment</a>
+        <a class="btn btn-wa" href="https://wa.me/919116146200?text=Hi%2C%20I%20want%20to%20book%20an%20appointment%20at%20SHIVOHAM%20Hospital" target="_blank" rel="noopener">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.84.5 3.62 1.45 5.18L2 22l5.06-1.55a9.9 9.9 0 0 0 4.98 1.33h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2zm5.78 14.1c-.24.68-1.42 1.3-1.96 1.38-.5.08-1.13.11-1.83-.11-.42-.13-.96-.3-1.65-.6-2.9-1.25-4.8-4.18-4.94-4.37-.14-.19-1.18-1.57-1.18-3 0-1.42.74-2.12 1-2.41.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.81 2 .88 2.14.07.15.12.32.02.51-.1.19-.16.31-.31.48-.15.17-.31.38-.45.51-.15.14-.3.29-.13.58.17.29.77 1.27 1.66 2.06 1.14 1.02 2.1 1.34 2.4 1.49.3.15.47.13.65-.05.18-.18.74-.84.94-1.13.2-.29.4-.24.66-.15.27.1 1.69.8 1.98.94.29.15.48.22.55.34.07.13.07.71-.17 1.4z"/></svg>
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="row"><span class="label">Hospital</span><b>SHIVOHAM Hospital &amp; Trauma Center</b></div>
+      <div class="row"><span class="label">Emergency</span><b>Open 24 Hours</b></div>
+      <div class="row"><span class="label">Orthopedic Consultant</span><b>Dr. Hemant Chaturvedi</b></div>
+      <div class="row"><span class="label">Gynecology Consultant</span><b>Dr. Namrata Mehta Chaturvedi</b></div>
+      <div class="row"><span class="label">Phone / WhatsApp</span><b>+91 91161 46200</b></div>
+      <div class="row"><span class="label">Location</span><b>UIT, Bhiwadi, Rajasthan</b></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider wrap"></div>
+
+<section id="doctors">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Our Consultants</p>
+      <h2>Two specialists, one trusted address</h2>
+    </div>
+    <div class="doctors">
+      <div class="doc-card ortho">
+        <div class="doc-bar bar-ortho"></div>
+        <div class="doc-top">
+          <span class="doc-tag tag-ortho">Orthopedic &amp; Trauma</span>
+          <h3>Dr. Hemant Chaturvedi</h3>
+          <p class="doc-role">Orthopedic &amp; Trauma Specialist</p>
+        </div>
+        <div class="doc-services">
+          <ul>
+            <li>Fracture treatment &amp; casting</li>
+            <li>Joint replacement (hip &amp; knee)</li>
+            <li>Sports injury care</li>
+            <li>Spine &amp; back pain treatment</li>
+            <li>Arthroscopy (keyhole surgery)</li>
+            <li>24x7 trauma &amp; emergency care</li>
+          </ul>
+        </div>
+      </div>
+      <div class="doc-card gyno">
+        <div class="doc-bar bar-gyno"></div>
+        <div class="doc-top">
+          <span class="doc-tag tag-gyno">Gynecology</span>
+          <h3>Dr. Namrata Mehta Chaturvedi</h3>
+          <p class="doc-role">Consultant Gynecologist</p>
+          <div class="doc-rating"><span class="stars">★★★★★</span><b>4.7</b><span style="color:var(--ink-soft)">(98 reviews)</span></div>
+        </div>
+        <div class="doc-services">
+          <ul>
+            <li>Normal &amp; cesarean delivery</li>
+            <li>Pregnancy care (antenatal &amp; postnatal)</li>
+            <li>Infertility treatment</li>
+            <li>Ultrasound &amp; sonography</li>
+            <li>PCOD / PCOS treatment</li>
+            <li>Gynae health checkups</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background:var(--paper-deep);">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What patients say</p>
+      <h2>Reviewed by families across Bhiwadi &amp; Dharuhera</h2>
+    </div>
+    <div class="doctors">
+      <div class="doc-card" style="padding:6px;">
+        <div class="doc-services" style="padding:22px 26px;">
+          <p style="font-size:15px;color:var(--ink-soft);margin:0 0 10px;">"Rated among the best hospitals in the area — patients describe both doctors as knowledgeable and dedicated to their care."</p>
+          <p style="font-size:13px;color:var(--gold);font-weight:600;margin:0;">— Google review summary</p>
+        </div>
+      </div>
+      <div class="doc-card" style="padding:6px;">
+        <div class="doc-services" style="padding:22px 26px;">
+          <p style="font-size:15px;color:var(--ink-soft);margin:0 0 10px;">"Patients describe Dr. Namrata as patient, polite, and thorough in explaining their treatment and addressing concerns."</p>
+          <p style="font-size:13px;color:var(--gold);font-weight:600;margin:0;">— Google review summary</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="timings">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Clinic Hours</p>
+      <h2>OPD timings &amp; emergency care</h2>
+    </div>
+    <div class="timing-grid">
+      <div class="timing-col">
+        <h4>Orthopedic OPD — Dr. Hemant Chaturvedi</h4>
+        <div class="slot"><span>Mon – Sat</span><b>10:00 AM – 2:00 PM</b></div>
+        <div class="slot"><span>Mon – Sat</span><b>6:00 PM – 8:00 PM</b></div>
+        <div class="slot"><span>Sunday</span><b>Emergency only</b></div>
+      </div>
+      <div class="timing-col">
+        <h4>Gynecology OPD — Dr. Namrata Mehta Chaturvedi</h4>
+        <div class="slot"><span>Mon – Sat</span><b>11:00 AM – 2:00 PM</b></div>
+        <div class="slot"><span>Mon – Sat</span><b>5:00 PM – 8:00 PM</b></div>
+        <div class="slot"><span>Sunday</span><b>Emergency only</b></div>
+      </div>
+      <div class="timing-col emergency">
+        <h4>Trauma &amp; Emergency</h4>
+        <div class="slot"><span>Every day</span><b>24 Hours</b></div>
+        <div class="slot"><span>Ambulance &amp; ICU</span><b>Available</b></div>
+      </div>
+    </div>
+    <p class="note">* OPD timings shown above are placeholders — please confirm and update with the hospital's exact daily schedule.</p>
+  </div>
+</section>
+
+<section id="location" style="background:var(--paper-deep);">
+  <div class="wrap loc-grid">
+    <div class="loc-card">
+      <p class="eyebrow">Find Us</p>
+      <h2 style="font-size:26px;margin-top:8px;margin-bottom:18px;">Visit SHIVOHAM Hospital</h2>
+      <div class="loc-list">
+        <div class="item"><span class="ic">📍</span><span>B-4, Opposite Indian Bank, Bhagat Singh Colony, U.I.T., Bhiwadi, Rajasthan 301019</span></div>
+        <div class="item"><span class="ic">📞</span><span>+91 91161 46200 (Call &amp; WhatsApp)</span></div>
+        <div class="item"><span class="ic">🕐</span><span>Emergency &amp; Trauma Care — Open 24 Hours</span></div>
+        <div class="item"><span class="ic">★</span><span>4.7 rating from 98 Google reviews</span></div>
+      </div>
+      <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
+        <a class="btn btn-ghost" href="https://maps.google.com/maps?q=B-4,+opposite+Indian+Bank,+Bhagat+Singh+Colony,+UIT,+Bhiwadi,+Rajasthan+301019" target="_blank" rel="noopener">Get Directions</a>
+        <a class="btn btn-wa" href="https://wa.me/919116146200" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      </div>
+    </div>
+    <div class="map-frame">
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=B-4%2C%20opposite%20Indian%20Bank%2C%20Bhagat%20Singh%20Colony%2C%20UIT%2C%20Bhiwadi%2C%20Rajasthan%20301019&z=15&output=embed">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<section id="appointment">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Book a Visit</p>
+      <h2>Request an appointment</h2>
+      <p style="color:var(--ink-soft);font-size:15px;margin-top:10px;">Fill the form and tap "Send via WhatsApp" — it opens WhatsApp with your details pre-filled, sent directly to the hospital's number.</p>
+    </div>
+    <div class="appt-card">
+      <form id="apptForm" onsubmit="return false;">
+        <div class="form-row">
+          <div>
+            <label for="name">Full Name</label>
+            <input id="name" type="text" placeholder="Your name" required>
+          </div>
+          <div>
+            <label for="phone">Phone Number</label>
+            <input id="phone" type="tel" placeholder="10-digit mobile number" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div>
+            <label for="doctor">Preferred Doctor</label>
+            <select id="doctor">
+              <option value="Dr. Hemant Chaturvedi (Orthopedic & Trauma)">Dr. Hemant Chaturvedi — Orthopedic &amp; Trauma</option>
+              <option value="Dr. Namrata Mehta Chaturvedi (Gynecologist)">Dr. Namrata Mehta Chaturvedi — Gynecologist</option>
+              <option value="Not sure / Emergency">Not sure / Emergency</option>
+            </select>
+          </div>
+          <div>
+            <label for="date">Preferred Date</label>
+            <input id="date" type="date">
+          </div>
+        </div>
+        <label for="message">Tell us briefly about your concern</label>
+        <textarea id="message" placeholder="E.g. Fracture follow-up, pregnancy checkup, etc."></textarea>
+        <div class="form-foot">
+          <button type="button" class="btn btn-wa" onclick="sendAppointment()">Send via WhatsApp</button>
+          <a class="btn btn-ghost" href="tel:+919116146200">Or Call Directly</a>
+          <span class="form-msg" id="formMsg"></span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <h4>SHIVOHAM Hospital &amp; Trauma Center</h4>
+      <p class="sub">Orthopedic, Trauma &amp; Gynecology Care</p>
+      <p class="fline">B-4, Opposite Indian Bank, Bhagat Singh Colony,<br>U.I.T., Bhiwadi, Rajasthan 301019</p>
+    </div>
+    <div>
+      <p class="fline">📞 +91 91161 46200</p>
+      <p class="fline">🟢 WhatsApp: +91 91161 46200</p>
+      <p class="fline">🕐 Emergency: Open 24 Hours</p>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 SHIVOHAM Hospital and Trauma Center. All rights reserved.</span>
+    <span>Built for Bhiwadi, Rajasthan</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919116146200?text=Hi%2C%20I%20have%20an%20enquiry%20for%20SHIVOHAM%20Hospital" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.84.5 3.62 1.45 5.18L2 22l5.06-1.55a9.9 9.9 0 0 0 4.98 1.33h.01c5.46 0 9.91-4.45 9.91-9.91A9.86 9.86 0 0 0 12.04 2zm5.78 14.1c-.24.68-1.42 1.3-1.96 1.38-.5.08-1.13.11-1.83-.11-.42-.13-.96-.3-1.65-.6-2.9-1.25-4.8-4.18-4.94-4.37-.14-.19-1.18-1.57-1.18-3 0-1.42.74-2.12 1-2.41.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.42-.07.65.5.24.58.81 2 .88 2.14.07.15.12.32.02.51-.1.19-.16.31-.31.48-.15.17-.31.38-.45.51-.15.14-.3.29-.13.58.17.29.77 1.27 1.66 2.06 1.14 1.02 2.1 1.34 2.4 1.49.3.15.47.13.65-.05.18-.18.74-.84.94-1.13.2-.29.4-.24.66-.15.27.1 1.69.8 1.98.94.29.15.48.22.55.34.07.13.07.71-.17 1.4z"/></svg>
+</a>
+
+<script>
+function sendAppointment(){
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const doctor = document.getElementById('doctor').value;
+  const date = document.getElementById('date').value;
+  const message = document.getElementById('message').value.trim();
+  const msgBox = document.getElementById('formMsg');
+
+  if(!name || !phone){
+    msgBox.textContent = "Please fill your name and phone number.";
+    msgBox.style.color = "#b5697a";
+    return;
+  }
+
+  let text = `Hi, I would like to book an appointment.\nName: ${name}\nPhone: ${phone}\nPreferred Doctor: ${doctor}`;
+  if(date) text += `\nPreferred Date: ${date}`;
+  if(message) text += `\nDetails: ${message}`;
+
+  const url = `https://wa.me/919116146200?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank');
+  msgBox.textContent = "Opening WhatsApp...";
+  msgBox.style.color = "#1f8a52";
+}
+</script>
+
+</body>
+</html>
